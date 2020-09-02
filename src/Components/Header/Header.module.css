@@ -1,0 +1,10 @@
+.header{
+  height: 150px;
+  width: auto;
+  background-color: rgb(7, 47, 47);
+}
+.logo {
+  width: 100px;
+  height: 60px;
+  float: left;
+}

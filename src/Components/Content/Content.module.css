@@ -1,0 +1,9 @@
+.content{
+  background-color: rgb(243, 178, 98);
+}
+.categories span{
+  background-color: rgb(204, 37, 11);
+  height: 100px;
+  width: 100px;
+  border-radius: 5px;
+}
