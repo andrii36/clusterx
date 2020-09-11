@@ -8,3 +8,9 @@
   height: 60px;
   float: left;
 }
+.login{
+  float: right;
+}
+.login span{
+  color: aliceblue;
+}

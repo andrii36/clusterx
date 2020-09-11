@@ -1,29 +1,29 @@
-let initialState = {
-    houses: [
-        {id:1, description: "house 1"},
-        {id:2, description: "house 2"},
-        {id:3, description: "house 3"},
-        {id:4, description: "house 4"},
-        {id:5, description: "house 5"}
-    ],
-    appartments: [
-        {id:1, description: "appartment 1"},
-        {id:2, description: "appartment 2"},
-        {id:3, description: "appartment 3"},
-        {id:4, description: "appartment 4"},
-        {id:5, description: "appartment 5"}
-    ],
-    multiFamily: [
+import { realEstateApi } from "../Api/api";
 
-    ]
+let initialState = {
+    realEstate: []
 }
 
 const realEstateReducer = (state = initialState, action) => {
     switch (action.type){
-        
+        case SET_REALESTATE_LIST: {
+            return{
+                ...state,
+                realEstate: [...action.data]
+            }
+        }
         default: 
             return state;
     }
 }
+
+export const getRealEstateThunk= () => (dispatch) => {
+    realEstateApi.getRealEstate()
+    .then(response => {
+        dispatch(setRealEstateList(response.data))
+    })
+}
+const SET_REALESTATE_LIST = "SET_REALESTATE_LIST";
+const setRealEstateList = (data) => ({type: SET_REALESTATE_LIST, data})
 
 export default realEstateReducer;
