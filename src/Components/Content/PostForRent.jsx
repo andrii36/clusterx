@@ -31,7 +31,11 @@ const PostForRent = (props) => {
     alert(formData.category)
   }
   return (
-    <PostReduxForm onSubmit={onSubmit}/>
+    <div>
+      <h1>Post My Ad</h1>
+      <PostReduxForm onSubmit={onSubmit}/>
+    </div>
+    
   );
 }
 
