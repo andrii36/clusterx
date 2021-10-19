@@ -1,9 +1,27 @@
 .content{
-  background-color: rgb(243, 178, 98);
+  min-height: 100%;
 }
-.categories span{
-  background-color: rgb(204, 37, 11);
-  height: 100px;
-  width: 100px;
-  border-radius: 5px;
+.websiteinfo{
+  margin: 10px 0px;
+}
+.websiteinfo__description{
+  text-align: center;
+  margin: 10px 6%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  width: 88%;
+}
+.websiteinfo__description a{
+  text-decoration: none;
+  font-size: 19px;
+}
+.websiteinfo__description a:visited{
+  text-decoration: none;
+}
+.description__title{
+  padding: 5px;
+  font-weight: bold;
+  font-size: 23px;
+}
+.description__text{
+  line-height: 20px;
 }

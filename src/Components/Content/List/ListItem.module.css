@@ -1,0 +1,12 @@
+.container{
+    border: 1px solid rgb(148, 62, 62);
+    margin-top: 3px;
+    background-color: cornsilk;
+}
+.container img{
+    height: 100px;
+    width: 150px;
+}
+.element{
+    margin-right: 800px;
+}

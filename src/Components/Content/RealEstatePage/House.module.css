@@ -1,0 +1,31 @@
+.house{
+    margin: 10px 0px;
+}
+.house img{
+    height: 100px;
+    width: 150px;
+}
+.house__element{
+    border: 1px solid black;
+    display: inline-flex;
+    justify-content: space-between;
+    padding: 5px;
+    background: white;
+    width: 80%;
+    text-align: left;
+}
+.element__title{
+    width: 70%;
+}
+.element__title a{
+    text-decoration: none;
+    color: black;
+    font-size: 21px;
+}
+.element__price{
+    width: 10%;
+    font-size: 21px;
+}
+.realEstate{
+    background: rgb(209, 206, 206);
+}

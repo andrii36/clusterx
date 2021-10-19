@@ -1,0 +1,32 @@
+.categories{
+  margin: 5px;
+  border: 1px solid black;
+  border-radius: 23px;
+}
+.categories__title{
+  margin: 10px 0px;
+  font-size: 25px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.categories__row{
+  margin: 10px auto;
+  max-width: 86%;
+  display: flex;
+  justify-content: space-around;
+}
+.categories__column{
+  padding: 5px;
+  border: 2px solid gray;
+  border-radius: 15px;
+  height: 35px;
+  width: 110px;
+  font-size: 18px;
+}
+.categories__column:hover{
+  border: 3px solid black;
+}
+.categories__column a{
+  text-decoration: none;
+  color: black;
+}

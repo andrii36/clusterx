@@ -1,0 +1,25 @@
+.search input{
+    height: 29px;
+    width: 25%;
+    border-radius: 5px;
+}
+.location input{
+    height: 29px;
+    width: 25%;
+    border-radius: 5px;
+}
+.location input:hover{
+    border-color: blue;
+}
+.search input:hover{
+    border-color: blue;
+}
+.search_btn{
+    border-radius: 5px;
+    height: 50px;
+    width: 50px;
+    background-color: white;
+}
+.search_btn img{
+    height: 25px;
+}

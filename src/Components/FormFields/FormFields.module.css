@@ -1,0 +1,23 @@
+.input_error{
+    border: solid brown 2px;
+}
+.text_error{
+    color: brown;
+}
+.dn{
+    display: none;
+}
+.addImage_block{
+    width: 50%;
+    margin: 0 25% 0 25%;
+}
+.addImage div{
+    font-size: 17px;
+    width: 100px;
+    cursor: pointer;
+    text-align: left;
+    margin: 10px 0 0 0;
+}
+.addImage div:hover{
+    color: rgb(19, 19, 165);
+}
