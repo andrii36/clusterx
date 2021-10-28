@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Header from './Components/Header/Header';
 import Content from './Components/Content/Content';
-import { Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 //import RealEstateContainer from './Components/Content/RealEstatePage/RealEstatePageContainer';
 import { connect } from 'react-redux';
 import LoginPage from './Components/Content/LoginPage/LoginPage';
@@ -16,6 +16,7 @@ import TransportProfile from './Components/Content/TransportPage/TransportProfil
 import ListPage from './Components/Content/List/ListPage';
 import NewListingCategories from './Components/AddNewListing/NewListingCategories';
 import PostForRent from './Components/AddNewListing/PostForRent';
+import PageNotFound from './Components/PageNotFound';
 
 const RealEstateContainer = React.lazy(() => import('./Components/Content/RealEstatePage/RealEstatePageContainer'));
 
@@ -29,20 +30,23 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header />
-        <Route exact path="/" render={() => <Content />} />
-        <Route path="/real-estate" render={() => <React.Suspense fallback={<div>Loading...</div>}>
-          <RealEstateContainer/>
-        </React.Suspense>}/>
-        <Route path="/real-estate-profile/:houseId" render={() => <RealEstateProfileContainer />}/>
-        <Route path="/transport-profile/:vehicleId" render={() => <TransportProfile />}/>
-        <Route exact path="/add-new-listing" render={() => <NewListingCategories />} />
-        <Route exact path="/add-new-listing/transport" render={() => <PostForRent category='Transport' />} />
-        <Route exact path="/add-new-listing/real-estate" render={() => <PostForRent category='RealEstate'/>} />
-        <Route path="/login" render={() => <LoginPage />} />
-        <Route path='/my-profile' render={() => <MyProfile />} />
-        <Route path="/create-account" render={() => <CreateAccountPage/>} />
-        <Route path="/transport" render={() => <TransportPageConatainer/>} />
-        <Route path="/search" render={() => <ListPage/>} />
+        <Switch>
+          <Route exact path="/" render={() => <Content />} />
+          <Route path="/real-estate" render={() => <React.Suspense fallback={<div>Loading...</div>}>
+            <RealEstateContainer/>
+          </React.Suspense>}/>
+          <Route path="/real-estate-profile/:houseId" render={() => <RealEstateProfileContainer />}/>
+          <Route path="/transport-profile/:vehicleId" render={() => <TransportProfile />}/>
+          <Route exact path="/add-new-listing" render={() => <NewListingCategories />} />
+          <Route exact path="/add-new-listing/transport" render={() => <PostForRent category='Transport' />} />
+          <Route exact path="/add-new-listing/real-estate" render={() => <PostForRent category='RealEstate'/>} />
+          <Route path="/login" render={() => <LoginPage />} />
+          <Route path='/my-profile' render={() => <MyProfile />} />
+          <Route path="/create-account" render={() => <CreateAccountPage/>} />
+          <Route path="/transport" render={() => <TransportPageConatainer/>} />
+          <Route path="/search/:main?" render={() => <ListPage/>} />
+          <Route render={() => <PageNotFound/>}/>
+        </Switch>
       </div>
     );
   }

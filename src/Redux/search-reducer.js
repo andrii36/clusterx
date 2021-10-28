@@ -1,7 +1,9 @@
 import { searchApi } from "../Api/api";
 
 let initialState = {
-    itemsList: []
+    itemsList: [],
+    messages: [],
+    isSearching: false
 }
 
 const listReducer = (state = initialState, action) => {
@@ -9,7 +11,14 @@ const listReducer = (state = initialState, action) => {
         case SET_LIST: {
             return {
                 ...state,
-                itemsList: [...action.data]
+                itemsList: [...action.data.data],
+                messages: action.data.messages
+            }
+        }
+        case "SET_IS_SEARCHING": {
+            return {
+                ...state,
+                isSearching: action.mode
             }
         }
         default:
@@ -17,11 +26,17 @@ const listReducer = (state = initialState, action) => {
     }
 }
 
-export const getListThunk = (formData) => async (dispatch) => {
-    
-    let response = await searchApi.getAllList()
+export const getListThunk = (data) => async (dispatch) => {
+    let response
+    dispatch({type: "SET_IS_SEARCHING", mode: true})
+    if(!data){
+        response = await searchApi.getAllList()
+    }else{
+        response = await searchApi.getSelectedList(data)
+    }
     if (response.resultCode == 0) {
-        dispatch(setList(response.data))
+        dispatch(setList(response))
+        dispatch({type: "SET_IS_SEARCHING", mode: false})
     }
 }
 
